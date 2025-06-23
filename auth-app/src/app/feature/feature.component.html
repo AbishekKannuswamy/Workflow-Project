@@ -1,0 +1,112 @@
+<div class="flex flex-col lg:flex-row items-center justify-between bg-white rounded-xl shadow-lg p-8 mx-auto max-w-6xl my-10">
+  <!-- Image Section -->
+  <div class="w-full lg:w-1/2 mb-6 lg:mb-0">
+    <img 
+      src="assets/feature-image-1.jpg" 
+      alt="Feature Image 1" 
+      class="rounded-lg shadow-md w-full transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+    >
+  </div>
+
+  <!-- Description Section -->
+  <div class="w-full lg:w-1/2 lg:pl-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Amazing Feature</h2>
+    <p class="text-lg text-gray-600 mb-4">
+      Discover the amazing features of our application that make your workflow seamless and efficient. 
+      Our tools are designed to help you manage your projects and collaborate with your team effortlessly.
+    </p>
+    <button
+      (click)="togglePopup('feature1')"
+      class="py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+      Learn More
+    </button>
+  </div>
+</div>
+
+<!-- Popup Box for Feature 1 -->
+<div *ngIf="showPopup === 'feature1'" class="fixed inset-0 flex items-center justify-center z-50" style="background-color: rgba(255, 255, 255, 0.5);">
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+    <button
+      (click)="togglePopup(null)"
+      class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col lg:flex-row items-center">
+      <!-- Popup Image -->
+      <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
+        <img 
+          src="assets/feature-image-1.jpg" 
+          alt="Popup Feature Image 1" 
+          class="rounded-lg shadow-md w-full"
+        >
+      </div>
+
+      <!-- Popup Description -->
+      <div class="w-full lg:w-1/2 lg:pl-4">
+        <h2 class="text-2xl font-extrabold text-gray-900 mb-4">Amazing Feature</h2>
+        <p class="text-base text-gray-600 mb-4">
+          This is a detailed description of the amazing feature. It provides more insights and information about how this feature can benefit you.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col lg:flex-row items-center justify-between bg-white rounded-xl shadow-lg p-8 mx-auto max-w-6xl my-10">
+  <!-- Description Section -->
+  <div class="w-full lg:w-1/2 lg:pl-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Amazing Feature</h2>
+    <p class="text-lg text-gray-600 mb-4">
+      Discover the amazing features of our application that make your workflow seamless and efficient. 
+      Our tools are designed to help you manage your projects and collaborate with your team effortlessly.
+    </p>
+    <button
+      (click)="togglePopup('feature2')"
+      class="py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+      Learn More
+    </button>
+  </div><br>
+  <!-- Image Section -->
+  <div class="w-full lg:w-1/2 mb-6 lg:mb-0">
+    <img 
+      src="assets/feature-image-2.jpg" 
+      alt="Feature Image 2" 
+      class="rounded-lg shadow-md w-full transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+    >
+  </div>
+</div>
+
+<!-- Popup Box for Feature 2 -->
+<div *ngIf="showPopup === 'feature2'" class="fixed inset-0 flex items-center justify-center z-50" style="background-color: rgba(255, 255, 255, 0.5);">
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+    <button
+      (click)="togglePopup(null)"
+      class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col lg:flex-row items-center">
+      <!-- Popup Image -->
+      <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
+        <img 
+          src="assets/feature-image-2.jpg" 
+          alt="Popup Feature Image 2" 
+          class="rounded-lg shadow-md w-full"
+        >
+      </div>
+
+      <!-- Popup Description -->
+      <div class="w-full lg:w-1/2 lg:pl-4">
+        <h2 class="text-2xl font-extrabold text-gray-900 mb-4">Amazing Feature</h2>
+        <p class="text-base text-gray-600 mb-4">
+          This is a detailed description of the amazing feature. It provides more insights and information about how this feature can benefit you.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

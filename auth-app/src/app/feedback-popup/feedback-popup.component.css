@@ -1,0 +1,25 @@
+/* Fixed Question Logo */
+.fixed {
+  position: fixed;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+/* Popup Overlay */
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.z-50 {
+  z-index: 50;
+}
