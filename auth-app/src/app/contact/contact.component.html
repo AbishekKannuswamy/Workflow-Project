@@ -1,0 +1,64 @@
+<div class="w-[55vw] mx-auto mt-16 p-8 bg-white rounded-xl shadow-lg">
+  <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Contact Us</h1>
+  <form id="contactForm">
+    <div class="mb-6">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+      />
+    </div>
+    <div class="mb-6">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+      />
+    </div>
+    <div class="mb-6">
+      <textarea
+        id="query"
+        name="query"
+        placeholder="Your Query"
+        required
+        rows="4"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-black"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-200"
+    >
+      Send
+    </button>
+  </form>
+  <!-- <p class="text-center mt-6 text-gray-500">Email: teamactivity02@gmail.com</p> -->
+  <!-- <p class="text-center mt-2 text-gray-700">Phone: +123 456 7890</p> -->
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const query = document.getElementById('query').value;
+        const email = document.getElementById('email').value;
+
+        emailjs.send("service_47c5zlo", "template_nb9atoj", {
+            name: name,
+            query: query,
+            email: email
+        }).then(function(response) {
+            console.log("Email sent successfully!", response.status, response.text);
+            alert("Email sent successfully!");
+        }, function(error) {
+            console.error("Failed to send email. Please try again later.", error);
+            alert("Failed to send email. Please try again later.");
+        });
+    });
+</script>

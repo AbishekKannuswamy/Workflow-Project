@@ -1,0 +1,263 @@
+<app-navbar 
+(login)="showPage = 'login'" 
+(register)="showPage = 'registration'">
+</app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Circle Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("XM7-a9legTV07uRj6"); 
+        });
+    </script>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+nav {
+    background-color: #525050;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 23px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    display: inline-block; 
+}
+nav a:hover {
+    background-color: #444;
+    color: #f9f9f9;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.content-section {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 20px 0;
+}
+.content-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.text-container, .image-container {
+    flex: 1;
+    padding: 20px;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+h1 {
+    color: #000000;
+    text-align: center;
+}
+h2 {
+    color: #1c1a1a;
+}
+p1 {
+    color: #555;
+    line-height: 1.6;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+}
+.input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 23px;
+    width: 70%;
+    padding: 5px;
+}
+.input-group select {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 20px;
+    width: 25%;
+}
+.input-group input, .input-group textarea {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 23px;
+    width: 70%;
+    padding: 5px;
+}
+.input-group textarea {
+    resize: none;
+    height: 100px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 23px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background: #0056b3;
+}
+.formula {
+    display: none;
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    text-align: left;
+}
+.calculate-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 23px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+p{
+    font-size: 23px;
+}
+.calculate-btn:hover {
+    background: #0056b3;
+}
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-container, .image-container {
+        padding: 10px;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .burger {
+        display: block;
+    }
+    nav a {
+        display: none;
+    }
+    nav.active a {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    nav {
+        padding: 30px;
+    }
+    nav a {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+
+    <h1>Contact Us</h1>
+    <div class="container">
+        <form id="contactForm">
+            <div class="input-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="input-group">
+                <textarea id="query" name="query" placeholder="Your Query" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </div>
+    <p style="text-align: center;">Email: teamactivity02@gmail.com</p>
+    <p style="text-align: center;">Phone: +123 456 7890</p>
+    <br>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const query = document.getElementById('query').value;
+            const email = document.getElementById('email').value;
+    
+            emailjs.send("service_47c5zlo", "template_nb9atoj", {
+                name: name,
+                query: query,
+                email: email
+            }).then(function(response) {
+                console.log("Email sent successfully!", response.status, response.text);
+                alert("Email sent successfully!");
+            }, function(error) {
+                console.error("Failed to send email. Please try again later.", error);
+                alert("Failed to send email. Please try again later.");
+            });
+        });
+    </script>
+</body>
+</html>

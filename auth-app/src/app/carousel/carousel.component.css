@@ -1,0 +1,18 @@
+.bottom-section {
+    height: 400px;
+    background-image: url('./feature-image.jpg'); /* Absolute path */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    border-radius: 20px; /* Add rounded edges */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px; /* Add spacing around the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  }
+  
+  .placeholder {
+    text-align: center;
+    color: white; /* Ensure text is visible on the background */
+    font-size: 1.5rem;
+  }

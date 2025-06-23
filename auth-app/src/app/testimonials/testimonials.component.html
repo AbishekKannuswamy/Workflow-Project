@@ -1,0 +1,18 @@
+<div class="testimonials-section bg-white py-12 px-6 sm:px-10 lg:px-16 mt-10 rounded-lg shadow-lg">
+  <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">What Our Users Say</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- User Feedbacks -->
+    <ng-container *ngFor="let fb of feedbacks | slice:0:6">
+      <div class="testimonial-item bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+        <p class="text-gray-600 italic mb-4">
+          "{{ fb.feedback }}"
+        </p>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">{{ fb.name }}</h3>
+          <p class="text-sm text-gray-500">User</p>
+        </div>
+      </div>
+    </ng-container>
+    <!-- Hardcoded Testimonials -->
+    
+</div>

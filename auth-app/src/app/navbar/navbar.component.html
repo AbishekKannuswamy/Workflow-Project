@@ -1,0 +1,30 @@
+<nav class="flex items-center px-6 py-4 bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="flex items-center space-x-4 flex-1">
+    <a href="#" style="cursor: pointer;">
+      <img 
+        src="assets/logo.png" 
+        alt="App Logo" 
+        class="h-14 w-auto"
+        style="border: 2px solid black; border-radius: 4px;" 
+      />
+    </a>
+  </div>
+  <div class="flex space-x-4">
+    <!-- <button class="px-4 py-2 rounded-lg font-semibold text-gray-700 hover:bg-gray-200 transition" (click)="scrollToSection('about')">
+      About Us
+    </button> -->
+    <button class="px-4 py-2 rounded-lg font-semibold text-blue-700 hover:bg-blue-100 transition" (click)="login.emit()">
+      Login
+    </button>
+    <button class="px-4 py-2 rounded-lg font-semibold text-green-700 hover:bg-green-100 transition" (click)="register.emit()">
+      Register
+    </button>
+    <button class="px-4 py-2 rounded-lg font-semibold text-gray-700 hover:bg-gray-200 transition" (click)="contact.emit()">
+      Contact Us
+    </button>
+    <button class="px-4 py-2 rounded-lg font-semibold text-gray-700 hover:bg-gray-200 transition" (click)="about.emit()">
+        About us
+      </button>
+    <!-- <button (click)="about.emit()" class="px-4 py-2 rounded hover:bg-blue-100 transition">About Us</button> -->
+  </div>
+</nav>

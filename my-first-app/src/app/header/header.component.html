@@ -1,0 +1,22 @@
+<header class="header">
+  <!-- Burger Button -->
+  <!-- <div class="burger" (click)="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div> -->
+  <!-- Left Side: Logo & Website Name -->
+  <div class="left">
+    <img src="assets/logo.png" alt="WorkFlow Logo" class="logo">  
+    <h1 class="site-name">WorkFlow</h1>
+  </div>
+  <!-- Right Side: Clickable Buttons -->
+  <div class="right">
+    <button (click)="buttonClicked('About')">About</button>
+    <button (click)="buttonClicked('Contact')">Contact</button>
+    <nav>
+      <button routerLink="/login">Login</button>
+      <button routerLink="/register">Register</button>
+    </nav>
+  </div>
+</header>
